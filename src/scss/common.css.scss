@@ -20,6 +20,10 @@ $sicklyYellow-light: rgba(203, 225, 79, 0.15);
           box-sizing: $box-model;
 }
 
+body{
+  line-height: 1.3em;
+}
+
 *{
   position: relative;
   @include box-sizing(border-box);
