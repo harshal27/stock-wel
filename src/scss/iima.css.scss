@@ -1,0 +1,27 @@
+.main_column{
+  width: calc(100% - 350px);
+  float: left;
+  @media screen and (max-width: 668px) {
+    float: none;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+}
+.sec_column{
+  width: 318px;
+  margin-left: 32px;
+  float: left;
+  @media screen and (max-width: 668px) {
+    float: none;
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+
+.magazine_box{
+  margin-right: 70px;
+  &:last-child{
+    margin-right: 0px;
+  }
+}
