@@ -122,7 +122,6 @@ module.exports = function(grunt) {
           cwd: 'src/',
           dest: 'dist/',
           src: [
-            'fonts/*',
             'pdf/*',
             'docs/*',
             'images/**',
