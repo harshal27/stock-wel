@@ -124,3 +124,51 @@
     <div style="clear: both;"></div>
   </div>
 </div>
+
+<div class="">
+  <div style="position: absolute;top: 0px;left: 0px;height: 246px;width: 100%;background: #3a3f42;">
+  </div>
+
+  <div style="max-width: 950px;margin: auto;padding-top: 68px;">
+    <div ac-suggestion-box ac-url="https://iima.almaconnect.com/suggestions/username.json" ac-model="state.selected_user"
+      input-class="ac_large_search_box" on-add-callback="redirectToSelectedUser" placeholder="Search for an alum....">
+    </div>
+  </div>
+
+  <div style="max-width: 966px;margin: auto;padding: 0px 8px 0px;">
+    <div class="main_column box-shadow-content" style="margin-top: 40px;padding: 24px;">
+      <div style="padding-bottom: 24px;">
+        <div style="float: left;">
+          <div style="font-size: 14px;line-height: 20px;color: #000;font-weight: 700;text-transform: uppercase;">
+            Alumni in the news
+          </div>
+          <div class="green_line"></div>
+        </div>
+        <div style="float: right;" class="text_link">
+          View all
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <div style="max-height: 410px;overflow: auto;">
+        <div ng-repeat="announcement in announcements" style="border: 1px solid rgb(241, 240, 240);margin-top: 8px;padding: 12px 16px;">
+          <div class="text_caption">
+            {{announcement.date}}
+          </div>
+          <div style="font-size: 14px;line-height: 20px;color: rgb(58, 63, 66);padding-top: 5px;font-weight: 700;">
+            {{announcement.title}}
+          </div>
+          <div style="font-size: 14px;line-height: 22px;color: rgb(112, 114, 116);padding-top: 12px;font-weight: 600;">
+            {{announcement.content}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec_column box-shadow-content" style="margin-top: 40px;height: 520px;padding: 24px;">
+      Twiitter Feed Box
+    </div>
+
+    <div style="clear: both;"></div>
+  </div>
+</div>

@@ -50,6 +50,11 @@ body{
   }
 }
 
+.suggested_item{
+  &.selected{
+    background: #e7eceb;
+  }
+}
 
 
 .flex_box{
@@ -343,7 +348,7 @@ body{
     @extend .text_body;
     width: 100%;
   }
-  input[type='text'], input[type='password'], input[type='number'], textarea, select, .selected_token, .token-input-token, .chosen-choices{
+  input[type='text'], input[type='password'], input[type='number'], textarea, select, .selected_token, .chosen-choices{
     display: block;
     @extend .text_body;
     border: 1px solid $coolGrey;
@@ -411,7 +416,7 @@ body{
     border: none;
   }
 
-  input[type='text'], input[type='password'], input[type='number'], textarea, select, .token-input-token{
+  input[type='text'], input[type='password'], input[type='number'], textarea, select{
     border: none;
     padding: 0px;
     &:focus{
@@ -532,12 +537,12 @@ body{
 }
 .ac_search_box{
   @extend .ac_input_box;
-  input[type='text'], input[type='number'], textarea, select, .token-input-token, .selected_token{
+  input[type='text'], input[type='number'], textarea, select, .selected_token{
     padding: 5px;
     padding-left: 28px;
   }
   &.expandable{
-    input[type='text'], input[type='number'], textarea, select, .token-input-token{
+    input[type='text'], input[type='number'], textarea, select{
       max-width: 110px;
       width: 100%;
       transition: max-width 0.8s ease;
@@ -558,7 +563,7 @@ body{
 
 .ac_large_search_box{
   @extend .ac_input_box;
-  input[type='text'], input[type='number'], textarea, select, .token-input-token, .selected_token{
+  input[type='text'], input[type='number'], textarea, select, .selected_token{
     padding: 5px;
     padding-left: 72px;
     border: none;

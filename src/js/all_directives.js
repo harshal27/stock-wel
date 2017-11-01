@@ -33,3 +33,91 @@ angular.module('ac').directive('acDropdown', ['$sce', function($sce) {
     }
   };
 }]);
+
+angular.module('ac').directive('ngCustomIf', ['$animate', function($animate) {
+  function toBoolean(value) {
+    if (typeof value === 'function') {
+      value = true;
+    } else if (value && value.length !== 0) {
+      var v = angular.lowercase("" + value);
+      value = !(v == 'f' || v == '0' || v == 'false' || v == 'no' || v == 'n' || v == '[]');
+    } else {
+      value = false;
+    }
+    return value;
+  }
+
+  function getBlockElements(nodes) {
+    var startNode = nodes[0],
+        endNode = nodes[nodes.length - 1];
+    if (startNode === endNode) {
+      return (startNode);
+    }
+
+    var element = startNode;
+    var elements = [element];
+
+    do {
+      element = element.nextSibling;
+      if (!element) break;
+      elements.push(element);
+    } while (element !== endNode);
+
+    return (elements);
+  }
+
+  return {
+    transclude: 'element',
+    priority: 600,
+    terminal: true,
+    restrict: 'A',
+    $$tlb: true,
+    link: function ($scope, $element, $attr, ctrl, $transclude) {
+        var block, previousElements;
+        $scope.$watch($attr.ngCustomIf, function ngCustomIfWatchAction(newValue, oldValue) {
+
+          if (toBoolean(newValue)) {
+            if(!previousElements){
+              $transclude($scope, function (clone) {
+                clone[clone.length] = document.createComment(' end ngCustomIf: ' + $attr.ngCustomIf + ' ');
+                clone.length = clone.length + 1;
+                block = {
+                  clone: clone
+                };
+                previousElements = clone;
+                $animate.enter(clone, $element.parent(), $element);
+              });
+            }
+          } else {
+            if(previousElements) {
+              $(previousElements).remove();
+              previousElements = null;
+            }
+            if(block) {
+              previousElements = getBlockElements(block.clone);
+              $(previousElements).remove();
+              block = null;
+              previousElements = null;
+            }
+          }
+        }, true);
+    }
+  };
+}]);
+
+angular.module('ac').directive('acEvent', ['$parse', function ($parse) {
+  return function (scope, elm, attrs) {
+    var events = scope.$eval(attrs.acEvent);
+    angular.forEach(events, function (acEvent, eventName) {
+      var fn = $parse(acEvent);
+      elm.bind(eventName, function (evt) {
+        var params = Array.prototype.slice.call(arguments);
+        //Take out first paramater (event object);
+        params = params.splice(1);
+        scope.$apply(function () {
+          fn(scope, {$event: evt, $params: params});
+        });
+      });
+    });
+  };
+}]);

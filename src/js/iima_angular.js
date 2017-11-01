@@ -3,6 +3,14 @@ angular.module('StaticWebsite', ['ngSanitize', 'ac']);
 angular.module('StaticWebsite').controller('MainController', ['$scope', '$http', '$timeout',
 function($scope, $http, $timeout) {
 
+  $scope.state = {
+    selected_user: null,
+  };
+
+  $scope.redirectToSelectedUser = function(){
+    window.location = $scope.state.selected_user.url;
+  };
+
   $scope.announcements = [
     {
       date: "July 25, 2017",
