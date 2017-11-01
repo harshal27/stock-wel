@@ -1,0 +1,57 @@
+<div style="padding: 4px 16px;">
+  <div ng-repeat="user in external_article.related_users" style="padding: 4px 0px;">
+    <a ng-href="{{user.url}}" style="display: block;float: left;margin-right: 12px;">
+      <img ng-src="{{user.image_url}}" style="max-width: 40px;max-height: 40px;border-radius: 20px;display: block;" />
+    </a>
+    <div style="float: left;width: calc(100% - 72px);font-size: 15px;" class="ellipsis">
+      <a ng-href="{{user.url}}" class="ac_link">
+        <span class="text_heading">{{user.name}}</span>
+      </a>
+      <span>
+        <span ng-custom-if="user.course" class="text_caption_small" style="padding-left: 8px;">
+          {{user.course.name}} '{{user.batch_small}}
+        </span>
+        <span ng-custom-if="user.designation" class="text_caption_small" style="padding-left: 8px;">
+          {{user.designation}}
+        </span>
+      </span>
+      <div class="text_caption">
+        <div ac-concat="[user.profile_title, ' at ', user.currently_at, ', ', user.current_city]" class="ellipsis" style="width: 100%;"></div>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</div>
+
+<div style="padding: 8px 16px;">
+  <!-- <div ng-custom-if="moreContent" class="text_body_big" style="word-wrap: break-word;">
+    <span ng-bind-custom-html="post.content_short | aclinky" style="display: inline;"></span>
+    <span class="text_body_big_link" style="cursor: pointer;display: inline;" ng-click="showMoreContent()">
+      See More
+    </span>
+  </div>
+
+  <div ng-bind-custom-html="post.content | aclinky" class="text_body_big" ng-custom-if="!moreContent" style="word-wrap: break-word;"></div> -->
+
+  <div style="padding-top: 8px;">
+    <a ng-href="{{external_article.external_url}}" target="_blank" style="display: block;">
+      <div style="background: #eef0f2;width: 100%;border-radius: 3px;">
+        <div style="width: 100%;padding-bottom: 40%;background-image: url({{external_article.image_url}})"
+          class="bg_cover" ng-custom-if="external_article.image_url">
+        </div>
+
+        <div style="padding: 12px 16px 8px;">
+          <div class="text_heading">
+            {{external_article.title}}
+          </div>
+          <div class="text_caption" class="spaced-text" ng-bind-html="external_article.description"
+            style="width: 100%;line-height: 1.2em;margin: 4px 0px;"></div>
+          <div class="text_caption_light">
+            {{external_article.site_url}}
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </a>
+  </div>
+</div>

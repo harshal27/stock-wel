@@ -49,4 +49,67 @@ function($scope, $http, $timeout) {
     "/images/magazines/7.png",
     "/images/magazines/8.png",
   ];
+
+  var fetchExternalArticles = function(){
+    $http({
+      method: "GET",
+      url: "https://iima.almaconnect.com/api/news.json"
+    }).success(function(response){
+      $scope.external_articles = response.data;
+    });
+  };
+  fetchExternalArticles();
+
+  $scope.distinguished_alumni = [
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+    {
+      image_url: "/images/raghuram_rajan.jpg",
+      name: "Raghuram Rajan",
+      other_info: "PGP 1985, Young Alumni Achiever 2015"
+    },
+  ];
 }]);

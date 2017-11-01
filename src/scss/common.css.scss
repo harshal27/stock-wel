@@ -21,6 +21,12 @@ body{
   font-family: 'Nunito Sans';
 }
 
+a {
+  color: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
 .ac_dropdown {
   position: absolute;
   background: white;

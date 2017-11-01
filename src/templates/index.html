@@ -151,22 +151,37 @@
       </div>
 
       <div style="max-height: 410px;overflow: auto;">
-        <div ng-repeat="announcement in announcements" style="border: 1px solid rgb(241, 240, 240);margin-top: 8px;padding: 12px 16px;">
-          <div class="text_caption">
-            {{announcement.date}}
-          </div>
-          <div style="font-size: 14px;line-height: 20px;color: rgb(58, 63, 66);padding-top: 5px;font-weight: 700;">
-            {{announcement.title}}
-          </div>
-          <div style="font-size: 14px;line-height: 22px;color: rgb(112, 114, 116);padding-top: 12px;font-weight: 600;">
-            {{announcement.content}}
+        <div ng-repeat="external_article in external_articles" style="border: 1px solid rgb(241, 240, 240);margin-top: 8px;padding: 12px 16px;">
+          <div ng-include="'src/templates/single_external_article.html'">
           </div>
         </div>
       </div>
     </div>
 
     <div class="sec_column box-shadow-content" style="margin-top: 40px;height: 520px;padding: 24px;">
-      Twiitter Feed Box
+      <div style="padding-bottom: 16px;">
+        <div style="font-size: 14px;line-height: 20px;color: #000;font-weight: 700;text-transform: uppercase;">
+          Distinguished Alumni
+        </div>
+        <div class="green_line"></div>
+      </div>
+
+      <div style="max-height: 410px;overflow: auto;">
+        <div ng-repeat="distinguished_alumnus in distinguished_alumni" style="margin-top: 16px;">
+          <div style="height: 40px;width: 40px;border-radius: 20px;overflow: hidden;float: left;">
+            <img ng-src="{{distinguished_alumnus.image_url}}" style="height: 40px;width: 40px;" />
+          </div>
+          <div style="float: left;padding-left: 16px;width: calc(100% - 40px);">
+            <div style="font-family: 700;font-size: 14px;line-height: 20px;color: #3a3f42;">
+              {{distinguished_alumnus.name}}
+            </div>
+            <div style="font-weight: 700;font-size: 10px;color: #b6b9bb;">
+              {{distinguished_alumnus.other_info}}
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
     </div>
 
     <div style="clear: both;"></div>

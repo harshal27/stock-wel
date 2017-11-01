@@ -121,3 +121,43 @@ angular.module('ac').directive('acEvent', ['$parse', function ($parse) {
     });
   };
 }]);
+
+/*
+<div ac-concat="[o1, s1, o2, s2, o3]"></div>
+*/
+angular.module('ac').directive('acConcat', ['$rootScope', function($rootScope) {
+  return function(scope, element, attrs) {
+
+    var prepareLink = function(value) {
+      if (!value) return;
+      if (typeof(value) != "object") return value.toString();
+      if (!value.name) return;
+      if (!value.url) return value.name;
+
+      result = '<a href="' + value.url + '" class="ac_link">' + value.name + '</a>';
+      return result;
+    };
+
+    var concat = function(v1, seperator, v2) {
+      return [prepareLink(v1), prepareLink(v2)].filter(String).filter(Boolean).join(seperator);
+    };
+
+    var appendCombinedText = function(){
+      var values = scope.$eval(attrs.acConcat);
+      while(values.length > 1){
+        var objects = values.splice(0, 3);
+        var output = concat(objects[0], objects[1], objects[2]);
+        values.splice(0, 0, output);
+      }
+
+      element.html(values[0]);
+    };
+    appendCombinedText();
+
+    if(attrs.acChangeable){
+      scope.$watch(attrs.acChangeable, function(){
+        appendCombinedText();
+      }, true);
+    }
+  };
+}]);
