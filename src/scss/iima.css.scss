@@ -104,6 +104,13 @@
   }
 }
 
+.nav_header{
+  font-weight: 700;font-size: 14px;line-height: 20px;color: #3a3f42;text-transform: uppercase;
+}
+.nav_link{
+  font-weight: 600;font-size: 14px;line-height: 28px;color: #707274;
+}
+
 .hide_below_1120{
   @media screen and (max-width: 1120px) {
     display: none;
@@ -127,5 +134,10 @@
   display: none;
   @media screen and (max-width: 610px) {
     display: block;
+  }
+}
+.hide_below_960{
+  @media screen and (max-width: 960px) {
+    display: none !important;
   }
 }
