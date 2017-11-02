@@ -27,11 +27,13 @@
   </head>
 
   <body ng-app="StaticWebsite" style="margin: 0px;line-height: 1em;" ng-controller="MainController">
-    <div style="max-width: 1280px;margin: auto;">
+    <div style="max-width: 1280px;margin: auto;background: rgb(243, 244, 245);">
       <div ng-include="'src/templates/main_menu.html'">
       </div>
 
       {{> body  }}
     </div>
+    <!-- <div style="margin: 0px 8px;">
+    </div> -->
   </body>
 </html>

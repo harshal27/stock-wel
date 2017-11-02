@@ -223,7 +223,7 @@
 
 
 <div style="max-width: 966px;margin: auto;padding: 0px 8px 0px;">
-  <div class="main_column" style="margin-top: 40px;padding: 24px;">
+  <div class="main_column padding_for_mobile" style="margin-top: 40px;">
     <div style="font-weight: 700;font-size: 32px;line-height: 44px;color: #000;">
       Contribute
     </div>
@@ -253,4 +253,12 @@
   </div>
 
   <div style="clear: both;"></div>
+</div>
+
+
+<div style="max-width: 966px;margin: auto;padding: 64px 8px 0px;overflow: auto;display: flex;" ng-custom-if="campaigns.length > 0">
+  <div ng-repeat="campaign in campaigns" style="display: inline-block;" class="donation_box">
+    <div ng-include="'src/templates/single_campaign.html'">
+    </div>
+  </div>
 </div>

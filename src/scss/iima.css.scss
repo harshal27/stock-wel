@@ -49,11 +49,30 @@
     width: 100%;
   }
 }
+.padding_for_mobile{
+  @media screen and (max-width: 668px) {
+    padding: 0px 24px;
+  }
+}
 
 .magazine_box{
   margin-right: 70px;
   &:last-child{
     margin-right: 0px;
+  }
+}
+
+.donation_box{
+  margin-right: 70px;
+  min-width: 500px;
+  &:last-child{
+    margin-right: 0px;
+  }
+  @media screen and (max-width: 550px) {
+    min-width: 350px;
+  }
+  @media screen and (max-width: 450px) {
+    min-width: 300px;
   }
 }
 

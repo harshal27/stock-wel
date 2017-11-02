@@ -1,0 +1,72 @@
+<div style="border:1px solid #e7eceb;border-radius: 3px;">
+  <a ng-href="/donations/{{campaign.id}}" style="display: block;">
+    <div style="width: 100%;height: 244px;background-size: cover;background-position: 50% 50%; background-repeat: no-repeat;"
+      static-bg-image="{{campaign.cover_picture.url}}">
+    </div>
+  </a>
+
+  <div style="padding: 24px;padding-bottom: 8px;">
+    <a ng-href="/donations/{{campaign.id}}" target="_self" class="text_title_small ellipsis" title="{{campaign.subject}}" style="max-width: 100%;display: block;">
+      {{campaign.subject}}
+    </a>
+
+    <div class="ellipsis text_caption" style="max-width: 100%;">
+      <a ng-href="{{campaign.contributor.url}}" class="text_caption_dark">{{campaign.contributor.name}}</a>
+      <span ng-custom-if="campaign.on_behalf_of">
+        on behalf of {{campaign.on_behalf_of}}
+      </span>
+    </div>
+
+    <div class="text_caption" style="padding-top: 8px;">
+      <div ng-custom-if="campaign.content_short">
+        <div ng-bind-custom-html="campaign.content_short | aclinky"></div>
+      </div>
+      <div ng-custom-if="!(campaign.content_short)">
+        <div ng-bind-custom-html="campaign.content | aclinky"></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;margin-bottom: 8px;">
+      <div style="background: #f8f8f8;height: 3px;width: 100%;"></div>
+      <div style="background: #00c4b5;height: 3px;width: {{campaign.amount_donated_in_percent}}%;position: absolute;top: 0px;"></div>
+    </div>
+
+    <div>
+      <div style="float: left;width: calc(100% - 117px);min-width: 250px;margin-bottom: 16px;">
+        <div style="display: inline-block;padding-right: 16px;text-align: center;">
+          <div class="text_caption_dark">
+            ₹ {{campaign.amount_donated}}
+          </div>
+          <div class="text_caption">
+            Contributed
+          </div>
+        </div>
+
+        <div style="display: inline-block;padding-right: 16px;text-align: center;">
+          <div class="text_caption_dark">
+            ₹ {{campaign.goal_amount}}
+          </div>
+          <div class="text_caption">
+            Goal Amount
+          </div>
+        </div>
+
+        <div style="display: inline-block;padding-right: 16px;text-align: center;">
+          <div class="text_caption_dark">
+            {{campaign.donors_count}}
+          </div>
+          <div class="text_caption">
+            Donors
+          </div>
+        </div>
+      </div>
+
+      <a ng-href="{{campaign.donate_url}}" class="ac_button" ng-custom-if="!(campaign.past_campaign)" style="float: left;display: block;margin-bottom: 16px;">
+        Contribute
+      </a>
+
+      <div style="clear: both;"></div>
+    </div>
+
+  </div>
+</div>

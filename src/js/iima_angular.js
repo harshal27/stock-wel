@@ -132,4 +132,14 @@ function($scope, $http, $timeout) {
     });
   };
   fetchMemories();
+
+  var fetchDonationCampaigns = function(){
+    $http({
+      method: "GET",
+      url: "https://ssn.almaconnect.com/api/donations.json"
+    }).success(function(response){
+      $scope.campaigns = response.data;
+    });
+  };
+  fetchDonationCampaigns();
 }]);
