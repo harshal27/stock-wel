@@ -72,6 +72,27 @@ a {
   -moz-flex-wrap: wrap;
 }
 
+@mixin flex2{
+  flex: 1 0 50%;
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  -moz-flex: 1 0 50%;
+}
+@mixin flex3{
+  flex: 1 0 33%;
+  -webkit-flex: 1 0 33%;
+  -ms-flex: 1 0 33%;
+  -moz-flex: 1 0 33%;
+}
+
+.flex3{
+  @include flex3;
+}
+
+.flex2{
+  @include flex2;
+}
+
 @keyframes loader-box-1 {
   0% {opacity: 0.33}
   33% {opacity: 1}

@@ -88,6 +88,16 @@
   &:last-child{
     margin-right: 0px;
   }
+  @media screen and (max-width: 550px) {
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 24px;
+  }
+  @media screen and (max-width: 410px) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 8px;
+  }
   &.selected{
     color: #3a3f42;
     border-bottom: 3px solid #00c4b5;

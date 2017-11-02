@@ -283,10 +283,12 @@
         Faculty Area Chairs
       </div>
     </div>
+  </div>
 
-    <div style="text-align: left;padding-top: 23px;">
+  <div style="max-width: 966px;margin: auto;padding: 0px 8px;">
+    <div style="text-align: left;padding-top: 23px;" class="flex_box">
       <div ng-repeat="institute_contact in institute_contacts[state.selected_contact_tab]"
-        style="display: inline-block;max-width: 315px;width: 100%;padding-top: 34px;">
+        style="min-width: 300px;width: 100%;padding-top: 34px;" class="flex3">
         <div style="font-weight: 700;font-size: 14px;line-height: 20px;color: #707274;">
           {{institute_contact.name}}
         </div>
