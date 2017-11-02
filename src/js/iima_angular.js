@@ -112,4 +112,14 @@ function($scope, $http, $timeout) {
       other_info: "PGP 1985, Young Alumni Achiever 2015"
     },
   ];
+
+  var fetchUpcomingEvents = function(){
+    $http({
+      method: "GET",
+      url: "https://iima.almaconnect.com/api/events.json"
+    }).success(function(response){
+      $scope.upcoming_events = response.data;
+    });
+  };
+  fetchUpcomingEvents();
 }]);

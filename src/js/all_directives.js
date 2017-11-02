@@ -161,3 +161,10 @@ angular.module('ac').directive('acConcat', ['$rootScope', function($rootScope) {
     }
   };
 }]);
+
+angular.module('ac').directive('staticBgImage', function() {
+  return function(scope, element, attrs) {
+    var url = attrs.staticBgImage;
+    if(url) element.css({'background-image': 'url("' + url +'")'});
+  };
+});

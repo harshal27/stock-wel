@@ -1,0 +1,39 @@
+<div style="border:1px solid #e7eceb;border-radius: 3px;">
+  <a ng-href="{{event.event_url}}">
+    <div class="border-box" static-bg-image="{{event.cover_picture.url}}"
+      style="cursor: pointer;height: 200px;background-size: cover;background-repeat: no-repeat;background-position: center;">
+    </div>
+  </a>
+  <div style="padding: 16px;padding-top: 0px;">
+    <div style="float: left;text-align: center;padding-right: 12px;margin-top: 16px;">
+      <div style="color: #ef5d60;text-transform: uppercase;font-size: 12px;font-weight: 600;">
+        {{event.start_date_month}}
+      </div>
+      <div class="text_title">
+        {{event.start_date_day}}
+      </div>
+    </div>
+
+    <div style="float: left;min-width: 200px;width: calc(100% - 104px);margin-top: 16px;">
+      <div style="width: 100%;" class="ellipsis text_heading">
+        <a class="ac_link" ng-href="{{event.event_url}}" style="width: 100%;">{{event.subject}}</a>
+      </div>
+      <div class="spaced-text text_body_light ellipsis" style="width: 100%;">
+        {{event.short_description}}
+      </div>
+      <div class="text_caption ellipsis" style="width: 100%;">
+        <span ng-show="event.rsvp_count>0">{{event.rsvp_count}} Going </span>
+        <span ng-show="event.rsvp_count==0">
+          <span class="text_caption">Created by&nbsp;</span>
+          <a ng-href="{{event.contributor.url}}" class="text_caption_dark">{{event.contributor.name}}</a>
+        </span>
+      </div>
+    </div>
+
+    <a ng-custom-if="event.reg_allowed" ng-href="{{event.registeration_url}}" style="display: block;float: left;margin-top: 16px;" class="ac_button_small">
+      Register
+    </a>
+
+    <div style="clear: both;"></div>
+  </div>
+</div>
