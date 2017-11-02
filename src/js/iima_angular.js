@@ -122,4 +122,14 @@ function($scope, $http, $timeout) {
     });
   };
   fetchUpcomingEvents();
+
+  var fetchMemories = function(){
+    $http({
+      method: "GET",
+      url: "https://iima.almaconnect.com/api/memories.json"
+    }).success(function(response){
+      $scope.memories = response.data;
+    });
+  };
+  fetchMemories();
 }]);

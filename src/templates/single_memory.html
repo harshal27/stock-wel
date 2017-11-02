@@ -1,0 +1,23 @@
+<a ng-href="{{memory.url}}" style="display: block;">
+  <div style="border: 1px solid rgb(241,240,240);">
+    <div static-bg-image="{{memory.cover.image_url}}" style="padding-bottom: 70%;width: 100%;vertical-align: middle;background-position: center;background-size: cover;">
+    </div>
+    <div style="padding: 16px;">
+      <div style="float: left;position: relative;top: 3px;">
+        <span class="nicon-picture" style="font-size: 13px;"></span>
+      </div>
+      <div style="float: left;width: calc(100% - 40px);padding: 0px 8px;">
+        <div class="text_heading ellipsis" style="max-width: 100%;">
+          {{memory.title}}
+        </div>
+        <div class="text_caption">
+          {{memory.images_count}} Pictures
+        </div>
+      </div>
+      <div class="text_title" style="float: left;">
+        '{{memory.year.toString().substring(2,4)}}
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+</a>
