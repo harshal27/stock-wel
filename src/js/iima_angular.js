@@ -5,6 +5,7 @@ function($scope, $http, $timeout) {
 
   $scope.state = {
     selected_user: null,
+    selected_contact_tab: 'alumni_office',
   };
 
   $scope.redirectToSelectedUser = function(){
@@ -142,4 +143,105 @@ function($scope, $http, $timeout) {
     });
   };
   fetchDonationCampaigns();
+
+
+
+  $scope.institute_contacts = {
+    alumni_office: [
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+    ],
+    student_activity: [
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+    ],
+    faculty_chairs: [
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+      {
+        name: "Dean – Alumni & External Relations",
+        email: "dean-aer@iima.ac.in",
+        contact_no: "079-663248xx",
+      },
+    ],
+  };
 }]);

@@ -76,6 +76,24 @@
   }
 }
 
+.contacts_tab{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6b9bb;
+  margin-right: 48px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  &:last-child{
+    margin-right: 0px;
+  }
+  &.selected{
+    color: #3a3f42;
+    border-bottom: 3px solid #00c4b5;
+  }
+}
+
 .hide_below_1120{
   @media screen and (max-width: 1120px) {
     display: none;

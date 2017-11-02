@@ -262,3 +262,43 @@
     </div>
   </div>
 </div>
+
+<div style="background: #fff;">
+  <div style="font-weight: 700;font-size: 32px;line-height: 44px;text-align: center;color: #3a3f42;padding-top: 85px;">
+    Get in Touch
+  </div>
+
+  <div style="text-align: center;max-width: 950px;margin: auto;border-bottom: 1px solid #e7eceb;padding-top: 69px;">
+    <div style="display: inline-block;">
+      <div class="contacts_tab" ng-class="{true: 'selected'}[state.selected_contact_tab == 'alumni_office']"
+        ng-click="state.selected_contact_tab = 'alumni_office'">
+        Alumni Office
+      </div>
+      <div class="contacts_tab" ng-class="{true: 'selected'}[state.selected_contact_tab == 'student_activity']"
+        ng-click="state.selected_contact_tab = 'student_activity'">
+        Student-LED Activity
+      </div>
+      <div class="contacts_tab" ng-class="{true: 'selected'}[state.selected_contact_tab == 'faculty_chairs']"
+        ng-click="state.selected_contact_tab = 'faculty_chairs'">
+        Faculty Area Chairs
+      </div>
+    </div>
+
+    <div style="text-align: left;padding-top: 23px;">
+      <div ng-repeat="institute_contact in institute_contacts[state.selected_contact_tab]"
+        style="display: inline-block;max-width: 315px;width: 100%;padding-top: 34px;">
+        <div style="font-weight: 700;font-size: 14px;line-height: 20px;color: #707274;">
+          {{institute_contact.name}}
+        </div>
+        <div style="font-weight: 600;font-size: 12px;line-height: 18px;color: #707274;padding-top: 6px;">
+          {{institute_contact.email}}
+        </div>
+        <div style="font-weight: 600;font-size: 12px;line-height: 18px;color: #707274;">
+          {{institute_contact.contact_no}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
