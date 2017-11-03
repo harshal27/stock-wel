@@ -1,0 +1,38 @@
+.hide_below_720{
+  @media screen and (max-width: 720px) {
+    display:none;
+  }
+}
+
+.hide_below_960{
+  @media screen and (max-width: 960px) {
+    display:none;
+  }
+}
+
+.footer{
+  .left_box{
+    min-width:720px;display:inline-block;float: left;
+    @media only screen and (max-width: 960px) {
+      min-width: 100%;
+      text-align: center;
+    }
+  }
+  .copyright_box{
+    float:right;
+    min-width:220px;
+    float: right;
+    @media only screen and (max-width: 960px) {
+      text-align: center;
+      min-width: 100%;
+      float: left;
+      padding: 8px 0px;
+    }
+  }
+}
+
+.mobile-container{
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:125px;
+}
