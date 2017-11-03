@@ -93,9 +93,8 @@ module.exports = function(grunt) {
       },
       js: {
         src: ['dist/templates/templates.js',
-          'src/js/plugins/1_jquery_files/*.js', 'src/js/plugins/jquery-file-upload/*.js',
-          'src/js/plugins/*.js', 'src/js/all_directives.js', 'src/js/ac_suggestion_box.js',
-          'src/js/iima_angular.js'],
+          'src/js/plugins/*.js', 'src/js/all_directives.js',
+          'src/js/stockwel_angular.js'],
         dest: 'dist/application.js',
       },
       angularjs: {
